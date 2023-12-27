@@ -3,6 +3,8 @@ import Facebook from "../../assets/icons/facebook.svg";
 import X from "../../assets/icons/X.svg";
 import Nelsyagram from "../../assets/icons/nelzyagramm.svg";
 
+import {HashLink as Link} from 'react-router-hash-link'
+
 import '../../styles/main-page/main-page.first-block.scss'
 
 function MainPageFirstBlock(){
@@ -22,15 +24,15 @@ function MainPageFirstBlock(){
 
                         <div className="main__first__container__middle__separator"></div>
                         <div className="main__first__container__middle__button">
-                            <button className="main__first__container__middle__button-yellow">BOOK TABLE</button>
-                            <button className="main__first__container__middle__button-outline">EXPLORE</button>
+                            <Link to="#booking"><button style={{cursor: "pointer"}} className="main__first__container__middle__button-yellow">BOOK TABLE</button></Link>
+                            <Link to="#about-us"><button style={{cursor: "pointer"}} className="main__first__container__middle__button-outline">EXPLORE</button></Link>
                         </div>
                     </div>
 
 
-                    <a href="#about-us" className="main__first__container__middle__scroll">
+                    <Link to="#about-us" className="main__first__container__middle__scroll">
                         <img className="main__first__container__middle__scroll__icon" src={ArrowDown}/>
-                    </a>
+                    </Link>
 
                 </div>
                 <div className="main__first__container__right">
