@@ -1,0 +1,184 @@
+.main{
+
+  &__booking{
+    scroll-snap-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    z-index: 2;
+    &__container{
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+
+      @media screen and (max-width: 650px) {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+
+      &__input{
+        height: calc(100% - 200px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: calc(50% - 20px);
+        @media screen and (max-width: 1000px) {
+          width: 100%;
+        }
+
+        &-head{
+          font-family: "Tenor Sans";
+          color: #000;
+          text-align: center;
+          font-size: clamp(36px, 2vw, 48px);
+          font-style: normal;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 25px;
+
+          @media screen and (max-width: 400px) {
+            line-height: 0.9;
+          }
+        }
+        &-line{
+          border-radius: 50px;
+          background: #E8C300;
+          width: 60px;
+          height: 5px;
+          margin-bottom: 5px;
+        }
+
+        &__container{
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          gap: 10px;
+
+          &__line{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: 100%;
+            gap: 10px;
+            @media screen and (max-width: 650px) {
+              flex-direction: column;
+            }
+
+            &__text{
+              font-family: "Open Sans";
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              width: 300px;
+              height: 60px;
+              border: none;
+              border-radius: 5px;
+              background: #E5E5E5;
+              box-sizing: border-box;
+              padding-left: 20px;
+
+              @media screen and (max-width: 650px) {
+                width: 100%;
+              }
+
+              &::-webkit-input-placeholder{
+                color: rgba(51, 51, 51, 0.50);
+              }
+              &::-moz-placeholder{
+                color: rgba(51, 51, 51, 0.50);
+              }
+            }
+            select{
+              padding-left: 20px;
+              border-right: 20px solid transparent;
+
+
+              &:has(option[value=""]:checked){
+                color: rgba(51, 51, 51, 0.50);
+              }
+
+              option{
+                &[value=""][disabled]{
+                  display: none
+                }
+
+              }
+            }
+
+            input[type="date"]{
+              border-right: 20px solid transparent;
+            }
+
+            input[value=""]{
+              color: rgba(51, 51, 51, 0.50);
+            }
+
+            &__button{
+              border-radius: 5px;
+              background: #E8C300;
+              border: none;
+              height: 60px;
+              width: 610px;
+
+              color: #FFF;
+              text-align: center;
+              font-family: "Open Sans";
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 20px; /* 166.667% */
+
+              transition: background .5s ease-in-out;
+
+              @media screen and (max-width: 650px) {
+                width: 100%;
+              }
+
+              &:hover{
+                background: #ffd917;
+              }
+            }
+          }
+        }
+      }
+
+      &__image{
+        position: relative;
+        height: calc(100% - 200px);
+        width: calc(50% - 20px);
+        
+        @media screen and (max-width: 1000px) {
+          display: none;
+        }
+
+        &-main{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+        &-rect{
+          width: 75%;
+          height: 75%;
+          object-fit: contain;
+          left: 45%;
+          top: 10%;
+          position: absolute;
+          z-index: 200;
+        }
+      }
+    }
+  }
+}

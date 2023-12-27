@@ -1,0 +1,137 @@
+.main{
+
+  &__our-team{
+    scroll-snap-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    z-index: 2;
+    background: url("../../assets/images/our-team.png") no-repeat;
+    background-size: cover;
+    &__container{
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 50px;
+      padding-bottom: 100px;
+
+      &__head{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+
+        color: #FFF;
+        text-align: center;
+
+        /* Caption */
+        font-family: "Open Sans";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+      }
+
+      &__tail{
+        display: flex;
+        height: 100%;
+        padding-left: 80px;
+        padding-right: 80px;
+
+        @media screen and (max-width: 800px) {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        &__text{
+          color: white;
+          height: calc(100% - 200px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: calc(50% - 20px);
+
+          @media screen and (max-width: 800px) {
+            margin-top: -100px;
+            height: 50%;
+            width: 100%;
+          }
+
+          &-head{
+            font-family: "Tenor Sans";
+            text-align: center;
+            font-size: clamp(36px, 2vw, 48px);
+            font-style: normal;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+          }
+          &-line{
+            border-radius: 50px;
+            background: #E8C300;
+            width: 60px;
+            height: 5px;
+            margin-bottom: 5px;
+          }
+          &-title{
+
+            text-align: center;
+            font-family: Open Sans;
+            font-size: clamp(18px,1vw, 22px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 28px; /* 155.556% */
+            margin-bottom: 5px;
+          }
+          &-subtitle{
+
+            font-family: Open Sans;
+            font-size: clamp(14px,0.8vw,16px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+          }
+        }
+
+        &__image{
+          position: relative;
+          height: calc(100% - 200px);
+          width: calc(50% - 20px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @media screen and (max-width: 800px) {
+            height: 50%;
+            width: 100%;
+          }
+
+          &-main{
+            width: 75%;
+            height: 75%;
+            object-fit: contain;
+          }
+          &-rect{
+            width: 75%;
+            height: 75%;
+            object-fit: contain;
+            left: -20%;
+            top: 10%;
+            position: absolute;
+            z-index: 200;
+          }
+        }
+      }
+      }
+
+
+  }
+}

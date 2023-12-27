@@ -1,0 +1,200 @@
+
+.main{
+
+  &__menu{
+    scroll-snap-align: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    z-index: 2;
+
+    &__container{
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+
+      &__head{
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: calc(50% - 20px);
+
+        &-head{
+          font-family: "Tenor Sans";
+          text-align: center;
+          font-size: clamp(36px, 2vw, 48px);
+          font-style: normal;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-bottom: 25px;
+          
+          @media screen and (max-width: 800px) {
+            line-height: 1;
+          }
+        }
+        &-line{
+          border-radius: 50px;
+          background: #E8C300;
+          width: 60px;
+          height: 5px;
+          margin-bottom: 5px;
+        }
+        &-title{
+
+          text-align: center;
+          font-family: Open Sans;
+          font-size: clamp(18px,1vw, 22px);
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.2;
+          margin-bottom: 5px;
+
+
+        }
+
+      }
+
+      &__category{
+        z-index: 20;
+        color: black;
+        display: flex;
+
+        &__item{
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 120px;
+          height: 50px;
+          text-transform: uppercase;
+          color: #333;
+          text-align: center;
+          font-family: Open Sans;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 18px; /* 150% */
+          position: relative;
+
+          border-right: 2px solid rgba(51, 51, 51, 0.20);
+          
+          @media screen and (max-width: 850px) {
+            width: 70px;
+            font-size: 12px;
+          }
+
+          &:last-child{
+            border-right: 0;
+          }
+
+          &::after{
+            position: absolute;
+            content: " ";
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            background-color: black;
+            bottom: -5px;
+            left: 0;
+            transform-origin: right;
+            transition: cubic-bezier(1,.08,.26,.92) .9s transform;
+          }
+          &:hover{
+            &::after{
+              content: "";
+              transform: scaleX(1);
+              transform-origin: left;
+            }
+          }
+        }
+      }
+
+      &__menu{
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(7, 0.1fr);
+        grid-column-gap: 45px;
+        grid-row-gap: 10px;
+        padding-left: 80px;
+        padding-right: 80px;
+        overflow-y: scroll;
+        padding-bottom: 75px;
+        
+        @media screen and (max-width: 1000px) {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(9, 1fr);
+        }
+        @media screen and (max-width: 650px) {
+          grid-template-columns: repeat(1, 90dvw);
+          grid-template-rows: repeat(11, 1fr);
+        }
+
+        &__item{
+          width: 270px;
+          height: 45px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          @media screen and (max-width: 650px) {
+            width: 100%;
+          }
+
+          &__firstline{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            color: #333;
+            font-family: "Tenor Sans";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px; /* 100% */
+
+
+            &-name{
+              overflow: hidden;
+              text-transform: uppercase;
+
+              &::after{
+                overflow: hidden;
+                word-break: break-all;
+                content: ".................................................................................................";
+              }
+            }
+
+            &-price{
+
+              &::after{
+                margin-left: 5px;
+                content: "€";
+              }
+            }
+          }
+
+          &__subtitle{
+            color: rgba(51, 51, 51, 0.50);
+            font-family: "Open Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}

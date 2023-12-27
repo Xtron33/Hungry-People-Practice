@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php?q=$1 [L,QSA]
+Header set Access-Control-Allow-Origin "http://localhost:5173"
+Header set Access-Control-Allow-Methods "GET,PATCH,POST,DELETE,OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, Origin"
+Header set Access-Control-Allow-Credentials "true"
+Header set Content-Type "multipart/form-data"
