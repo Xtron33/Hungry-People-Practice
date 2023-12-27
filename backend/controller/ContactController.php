@@ -19,7 +19,7 @@ class ContactController
             case "GET":
                 if($id === "user"){
                     $res = $this->getContactByUserId($user_id);
-                    if(isset($res)){
+                    if($res!==false){
                         http_response_code(200);
                         echo json_encode([
                             $res

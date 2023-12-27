@@ -16,7 +16,6 @@ class ContactModel{
         $res = $this->conn->query($sql);
 
         while($row = $res->fetch(PDO::FETCH_ASSOC)){
-            unset($row["password"]);
             $contacts[] = $row;
         }
         
@@ -42,7 +41,6 @@ class ContactModel{
         $stmt->execute();
 
         $res = $stmt->fetch(PDO::FETCH_ASSOC);
-        unset($res["password"]);
 
         return $res;
     }
