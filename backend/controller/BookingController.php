@@ -26,9 +26,8 @@ class BookingController
                         ]);
                     }
                     else{
-                        http_response_code(401);
+                        http_response_code(200);
                         echo json_encode([
-                            "message" => "not found"
                         ]);
                     }
                 }

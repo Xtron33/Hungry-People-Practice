@@ -43,7 +43,6 @@ function MainPageMenu(){
                 {
                     !isMobile ?
                         <div className="main__menu__container__category">
-                            <div onClick={() => setCurrentCategory(0)} className="main__menu__container__category__item">Main</div>
                             {
                                 categories.map((elem) => <div onClick={() => setCurrentCategory(elem.id !== undefined ? elem.id : 0)} className="main__menu__container__category__item" key={elem.id}>{elem.name}</div> )
                             }
